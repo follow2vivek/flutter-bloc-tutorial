@@ -1,6 +1,7 @@
 # Flutter Bloc Tutorial
-<a href='https://youtu.be/0wHTltfkQTI'><img src="./youtube.png" height="100" width="100"></a>
 
+Watch on YouTube 👇
+<a href='https://youtu.be/0wHTltfkQTI'><img src="./youtube.png" height="100" width="100"></a>
 
 ## Following topics will be covered
 1. What is Bloc? (Business Logic Component)
