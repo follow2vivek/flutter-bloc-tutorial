@@ -30,6 +30,18 @@ class Home extends StatelessWidget {
             BlocBuilder<CounterState, int>(
               builder: (context, state) => Text(state.toString()),
               buildWhen: (previousState, newState) => newState > 10,
+            ),
+            //Series Part 2
+            BlocListener(
+              listener: (context, state) {
+                print('BlocListener $state');
+              },
+              child: BlocBuilder<CounterState, int>(
+              builder: (context, state) => Text(state.toString()),
+            ),
+              bloc: context.read<CounterState>(),
+              //bloc: BlocProvider.of<CounterState>(context),
+              listenWhen: (int previousState, int newState) => newState > 5,
             )
           ],
         ),
