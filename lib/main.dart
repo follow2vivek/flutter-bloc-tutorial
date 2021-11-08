@@ -27,7 +27,7 @@ class Home extends StatelessWidget {
               onPressed: () => context.read<CounterState>().increament(),
               child: Text('click'),
             ),
-            BlocBuilder<CounterState, int>(
+            /*  BlocBuilder<CounterState, int>(
               builder: (context, state) => Text(state.toString()),
               buildWhen: (previousState, newState) => newState > 10,
             ),
@@ -42,6 +42,17 @@ class Home extends StatelessWidget {
               bloc: context.read<CounterState>(),
               //bloc: BlocProvider.of<CounterState>(context),
               listenWhen: (int previousState, int newState) => newState > 5,
+            ), */
+            
+            //Series Part 3
+            BlocConsumer<CounterState, int>(
+              builder: (context, state) => Text(state.toString()),
+              buildWhen: (previousState,newState)=> newState > 5,
+              listener: (context, state) {
+                ScaffoldMessenger.of(context)
+                    .showSnackBar(SnackBar(content: Text(state.toString())));
+              },
+              listenWhen: (previousState,newState)=> newState > 3,
             )
           ],
         ),
